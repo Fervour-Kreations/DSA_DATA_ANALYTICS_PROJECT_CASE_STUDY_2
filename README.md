@@ -19,7 +19,7 @@ The analysis was performed on data extracted from:
 
 ## **Tools Used**
 
-* **SQL Server** – For data extraction and transformation [click here](https://sql server.com)
+* **SQL Server** – For data extraction and transformation [click here](https://sql)
 
 
 ---
@@ -28,12 +28,21 @@ The analysis was performed on data extracted from:
 
 1. **Which product category had the highest sales?**
    ➤ *Technology* was the product category with the highest total sales across all regions.
-
+- Select top 1 Product_Category, sum(Sales) as Total_Sales
+  From [KMS Sql Case Study-1]
+  Group by Product_Category
+  Order by Total_Sales Desc
 
 2. **What are the Top 3 and Bottom 3 regions in terms of sales?**
 
    * **Top 3**: Ontario, Quebec, British Columbia
+- Select top 3 Region, sum(sales) as Total_Sales_per_Region
+  from [KMS Sql Case Study-1]
+  Group by Region
+  Order by Total_Sales_per_Region Desc
+
    * **Bottom 3**: Yukon, Nunavut, Newfoundland
+
 
 3. **What were the total sales of appliances in Ontario?**
    ➤ The total sales of *Appliances* in *Ontario* was calculated using a filtered aggregation and amounted to **₦X,XXX,XXX**.
